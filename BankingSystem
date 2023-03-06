@@ -1,1 +1,33 @@
+class bankAccount:
+    def __init__(self):
+        self.balance = 0
+        print ("Hello, welcome to the deposit and withdrawal ATM")
 
+    def deposit(self):
+        amountDep = float(input("Enter the amount you wish to deposit: "))
+        self.balance += amountDep
+        print ("\nAmount Deposited: ", amountDep)
+
+    def withdrawal(self):
+        amountWithdrew = float(input("Enter the amount to be withdrawn: "))
+        i = 0
+        while i <= 1:
+            if self.balance >= amountWithdrew:
+                self.balance -= amountWithdrew
+                print("\n You have withdrawn: ", amountWithdrew)
+                i += 2
+            else:
+                print("\n Insufficient balance: ")
+                i += 2
+
+    def display(self):
+        print ("\n Available balance: £", self.balance)
+
+# Driver code
+# Creating an object of class
+s = bankAccount()
+
+# Calling functions with that class object
+s.deposit()
+s.withdrawal()
+s.display()
